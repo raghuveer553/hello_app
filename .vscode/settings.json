@@ -1,0 +1,24 @@
+{
+    "ruby.useLanguageServer": true,
+    "ruby.intellisense": "rubyLocate",
+    "rubyLsp.indexing": {
+      "excludedPatterns": ["**/test/**/*.rb", "**/*.rbs"],
+      "includedPatterns": ["**/bin/**/*"],
+      "excludedGems": ["rubocop", "rubocop-performance"],
+      "excludedMagicComments": ["compiled:true"],
+    },
+    "sorbet.enabled": false,
+    "sorbet.lspConfigs": [{
+    "id": "stable",
+    "name": "Sorbet",
+    "description": "Stable Sorbet Ruby IDE features",
+    "cwd": "${workspaceFolder}",
+    "command": [
+      "bundle",
+      "exec",
+      "srb",
+      "typecheck",
+      "--lsp"
+    ]
+  }]
+}
